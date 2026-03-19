@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: agriprice1-hub-api
+    env: node
+    rootDir: server
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://lnjerii.github.io
+      - key: DATABASE_URL
+        value: /opt/render/project/src/server/data/agri_price.db
+    disk:
+      name: agriprice-db
+      mountPath: /opt/render/project/src/server/data
+      sizeGB: 1

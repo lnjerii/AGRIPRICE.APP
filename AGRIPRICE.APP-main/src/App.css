@@ -1,0 +1,49 @@
+/* App theme tokens */
+:root[data-theme="light"],
+:root[data-theme="dark"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4fbf6;
+  --text-primary: #1f4d2d;
+  --text-secondary: #4d6b57;
+  --border-color: rgba(47, 164, 79, 0.2);
+  --shadow-color: rgba(47, 164, 79, 0.15);
+  --brand-green: #2fa44f;
+  --brand-green-dark: #238a3f;
+}
+
+/* App Container - ensures navbar and footer stay visible */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container.light-mode,
+.app-container.dark-mode {
+  background-color: #ffffff;
+  color: #1f4d2d;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.read-the-docs {
+  color: var(--text-secondary);
+}
